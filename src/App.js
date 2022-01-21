@@ -1,8 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 
+
 function App() {
   return (
+  // this is contains the styling of the app
   <div className ="App">
     <header className="header">
       <div className="logo">
