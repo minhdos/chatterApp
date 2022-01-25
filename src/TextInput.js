@@ -3,15 +3,15 @@ import "./TextInput.css";
 import {useState} from "react";
 
 function TextInput(props) {
-  const {sendMessage} = props;
+  // const {sendMessage} = props;
   const [text, setText] = useState('')
 
   function send() {
-    sendMessage(text);
+    props.sendMessage(text);
     setText("");
   }
   function onKeyPress(e){
-    if(e.key=='Enter') {
+    if(e.key ==='Enter') {
       send();
     }
   }

@@ -1,20 +1,22 @@
 import React from 'react'
 
 class Header extends React.Component {
-  constructor() {
+  constructor(props) {
+    super(props);
     this.state = {
-      text: "",
+      text: "CHATTER!",
     };
-    this.changeTitle  = this.changeTitle.bind(this);
+    this.changeTitle = this.changeTitle.bind(this);
   }
+  componentDidMount() {}
   changeTitle = () => {
-    this.setState({title: "Cool title"});
-  }
+    this.setState({ text: "Cool title" });
+  };
   render() {
     return (
-      <header className="header">
+      <header className="header" onClick={this.changeTitle}>
       <div className="logo">
-        <span className="title">CHATTER!</span>
+        <span className="title">{this.state.text}</span>
       </div>
     </header>
     );

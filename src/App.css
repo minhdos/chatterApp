@@ -65,11 +65,12 @@
 
 .messages{
   display: flex;
-  flex-direction: column;
+  flex-direction: column-reverse;
   align-items: flex-start;
-  justify-content: center;
   overflow: auto;
   max-height: calc(100vh - 4rem - 4rem);
+  min-height: calc(100vh - 4rem - 4rem);
+  padding: 1rem;
 }
 
 .message {
