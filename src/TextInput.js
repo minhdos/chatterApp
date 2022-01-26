@@ -2,6 +2,7 @@ import React from "react";
 import "./TextInput.css";
 import {useState} from "react";
 
+// This allows to componentized text input
 function TextInput(props) {
   // const {sendMessage} = props;
   const [text, setText] = useState('')

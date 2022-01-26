@@ -1,5 +1,6 @@
 import React from 'react'
 
+// This allows to componentized header
 class Header extends React.Component {
   constructor(props) {
     super(props);

@@ -4,7 +4,7 @@ import TextInput from './TextInput';
 import {useState} from "react";
 import Message from './Message';
 
-
+// This connects other components into one app
 function App() {
   const [messages, setMessages] = useState([]);
   function sendMessage(text) {
