@@ -24,7 +24,8 @@
 
 /* this is for the entire app and background */
 .App {
-  background:  #ccccff;
+  background: rgb(238,174,202);
+  background: radial-gradient(circle, rgba(238,174,202,1) 0%, rgba(148,187,233,1) 100%);
   height: 100vh;
   display: flex;
   flex-direction: column;
@@ -44,11 +45,12 @@
 
 /* this is for the title */
 .title{
-  color: green;
+  color: #94849B;
   font-weight: bold;
   font-size: 2rem;
-
   margin-left: 4rem;
+  margin-top: 2rem;
+  padding: 1rem;
 
 }
 
@@ -56,7 +58,7 @@
 .logo {
   height: 3.5rem;
   width: 3.5rem;
-  background: url(https://blog.hubspot.com/hubfs/image8-2.jpg);
+  background: url(https://mpng.subpng.com/20180711/lxx/kisspng-quotation-idea-pinnwand-citation-boba-drink-5b45cab26dc093.9513944815313005304496.jpg);
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
@@ -76,7 +78,8 @@
 .message {
   color: black;
   background: pink;
-  padding: 0.5rem 1rem;
-  border-radius: 0.3rem;
+  padding: 0.5rem 0.8rem;
+  border-radius: 0.7rem;
+  border-color: grey;
   margin: 0.2rem;
 }

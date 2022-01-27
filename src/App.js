@@ -21,7 +21,7 @@ function App() {
   <div className ="App">
     <header className="header">
       <div className="logo">
-        <span className="title">CHATTER!</span>
+        <span className="title">ChatterApp!</span>
       </div>
     </header>
     <div className='messages'>
