@@ -5,11 +5,13 @@ import {useState} from "react";
 import Message from './Message';
 import { FiSend} from "react-icons/fi";
 import Camera from 'react-snap-pic';
+import NamePicker from './NamePicker';
 
 // This connects other components into one app
 function App() {
   let [showCamera, setShowCamera] = useState(false);
   let [messages, setMessages] = useState([]);
+  let [user, userName] = useState("");
   // "sendMessage" runs whenever we click the send button
   function sendMessage(text) {
     if (!text) return;
@@ -18,7 +20,7 @@ function App() {
     const newMessage = {
       text: text,
       time: Date.now(),
-      user: "Minh",
+      user: user,
     };
 
     // set the "messages" to be  a new array
@@ -41,6 +43,9 @@ function App() {
     <header className="header">
       <div className="logo">
         <span className="title">ChatterApp!</span>
+      </div>
+      <div className='name'>
+        <NamePicker set={userName}/>
       </div>
     </header>
     <div className='messages'>

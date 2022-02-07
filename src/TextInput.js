@@ -31,7 +31,7 @@ function TextInput(props) {
     />
     <button className="send" onClick={send}>
       <FiSend/>
-      </button>
+    </button>
   </footer>
   );
 }
