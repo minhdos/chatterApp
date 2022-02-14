@@ -6,38 +6,36 @@ import "./NamePicker.css";
 
 function NamePicker (props) {
   let [editName, setEditName] = useState(false);
-  let [name, setName] = useState("Set a username: ");
+  let [name, setName] = useState("");
 
 
 function set() {
-  props.set(name);
+  props.setUsername(name);
   setEditName(false);
 }
-function onKeyPress(e){
-  if(e.key ==='Enter') {
-    set();
-  }
-}
+
 
 if (editName) {
-  return  <div className="NamePicker">
+  return (
+  <div className="NamePicker">
     <button className="set" onClick={set}>
       Ok
     </button>
     <input className="name-input"
-      value={name}
       onChange={(e) => setName(e.target.value)}
-      onKeyPress={onKeyPress}
+      value={name}
     />
-</div>
-}  else {
-    return  <div className="NamePicker">
-    {name}
-    <button className="set" onClick={()=>setEditName (true)}>
-      <FiEdit/>
-    </button>
-</div>
+  </div>
+  );
 }
+  return (
+    <div className="NamePicker">
+      <span> {name || "Set Username: "}</span>
+      <button className="set" >
+        <FiEdit size="24" onClick={()=>setEditName (true)}/>
+      </button>
+    </div>
+  );
 
 
 }

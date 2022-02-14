@@ -76,6 +76,13 @@
   padding: 1rem;
 }
 
+.message-user {
+  position: absolute;
+  left: 0px;
+  top: -1rem;
+  font-size: 0.5rem;
+}
+
 .message {
   color: black;
   background: pink;

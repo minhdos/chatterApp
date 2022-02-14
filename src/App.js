@@ -11,16 +11,16 @@ import NamePicker from './NamePicker';
 function App() {
   let [showCamera, setShowCamera] = useState(false);
   let [messages, setMessages] = useState([]);
-  let [user, userName] = useState("");
-  // "sendMessage" runs whenever we click the send button
+  let [username, setUsername] = useState("");
+  // "sendMessage" runs whenever we click the send butto
   function sendMessage(text) {
-    if (!text) return;
+    if (!text.trim()) return;
     // console.log("MY Message", msg)
     // create new mssg object
     const newMessage = {
       text: text,
       time: Date.now(),
-      user: user,
+      user: username,
     };
 
     // set the "messages" to be  a new array
@@ -45,7 +45,7 @@ function App() {
         <span className="title">ChatterApp!</span>
       </div>
       <div className='name'>
-        <NamePicker set={userName}/>
+        <NamePicker setUsername={setUsername}/>
       </div>
     </header>
     <div className='messages'>
@@ -53,7 +53,7 @@ function App() {
         // loop over every message in the array
         // return a Message component
         // "key" needs to be a unique value for each item
-        return <Message {...msg} key={i} />;
+        return <Message {...msg} key={i} fromMe={msg.user === username}/>;
       })}
 
     </div>
