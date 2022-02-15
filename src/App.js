@@ -6,11 +6,17 @@ import Message from './Message';
 import { FiSend} from "react-icons/fi";
 import Camera from 'react-snap-pic';
 import NamePicker from './NamePicker';
+import {useDB, db} from "./db"
+import { use100vh } from "react-div-100vh";
+
 
 // This connects other components into one app
 function App() {
+  const height = use100vh();
+
+  const messages = useDB();
+
   let [showCamera, setShowCamera] = useState(false);
-  let [messages, setMessages] = useState([]);
   let [username, setUsername] = useState("");
   // "sendMessage" runs whenever we click the send butto
   function sendMessage(text) {
@@ -22,10 +28,9 @@ function App() {
       time: Date.now(),
       user: username,
     };
-
     // set the "messages" to be  a new array
     // that has new and old mssgs
-    setMessages([newMessage, ...messages]);
+    db.send(newMessage);
   }
 
   function takePicture (img)  {

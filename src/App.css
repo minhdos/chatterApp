@@ -76,6 +76,13 @@
   padding: 1rem;
 }
 
+.message-row {
+  display: flex;
+  align-items: center;
+  width: 97vw;
+  flex-direction: row;
+}
+
 .message-user {
   position: absolute;
   left: 0px;
@@ -86,14 +93,45 @@
 .message {
   color: black;
   background: pink;
-  padding: 0.5rem 0.8rem;
-  border-radius: 0.7rem;
   border-color: grey;
-  margin: 0.2rem;
+  padding: 0.7rem 1rem;
+  margin: 0.6rem;
+  border-radius: 0.7rem;
+  max-width: 17rem;
+  min-height: auto;
+  overflow-wrap: break-word;
+  position: relative;
 }
 
 .name {
   display: flex;
   justify-content: space-between;
-  margin-left: 87rem;
+  margin-left: 40rem;
+}
+
+.name-picker {
+  display: flex;
+  align-items: center;
+  margin-left: 1rem;
+
+}
+
+.name-picker-input {
+  width: 100%;
+  border: 1px solid white;
+  height: 2rem;
+  border-radius: 1rem;
+  padding: 0 1rem;
+  background: black;
+  color: white;
+}
+
+.name-picker svg {
+  stroke: white;
+  cursor: pointer;
+}
+.name-picker-name {
+  color: white;
+  margin-right: 0.5rem;
+  font-size: 0.8rem;
 }

@@ -1,43 +1,40 @@
 import { useState } from "react";
-import { FiEdit} from "react-icons/fi";
-import React from "react";
-import "./NamePicker.css";
+import { FiEdit } from "react-icons/fi";
 
+// the component declaration
+// by convention, we name it with a capital first letter
+function NamePicker(props) {
+  // this is the state of the name itself
+  const [name, setName] = useState("");
+  // this is a toggle between showing and hiding the input
+  const [showInput, setShowInput] = useState(false);
 
-function NamePicker (props) {
-  let [editName, setEditName] = useState(false);
-  let [name, setName] = useState("");
+  // you clicked ok!
+  function ok() {
+    props.setUsername(name);
+    setShowInput(false);
+  }
 
-
-function set() {
-  props.setUsername(name);
-  setEditName(false);
-}
-
-
-if (editName) {
+  if (showInput) {
+    return (
+      <div className="name-picker">
+        <input
+          className="name-picker-input"
+          onChange={(e) => setName(e.target.value)}
+          value={name}
+        />
+        <button className="name-picker-button" onClick={ok}>
+          OK
+        </button>
+      </div>
+    );
+  }
   return (
-  <div className="NamePicker">
-    <button className="set" onClick={set}>
-      Ok
-    </button>
-    <input className="name-input"
-      onChange={(e) => setName(e.target.value)}
-      value={name}
-    />
-  </div>
-  );
-}
-  return (
-    <div className="NamePicker">
-      <span> {name || "Set Username: "}</span>
-      <button className="set" >
-        <FiEdit size="24" onClick={()=>setEditName (true)}/>
-      </button>
+    <div className="name-picker">
+      <span className="name-picker-name">{name || "Set Username:"}</span>
+      <FiEdit size="24" onClick={() => setShowInput(true)} />
     </div>
   );
-
-
 }
-export default NamePicker;
 
+export default NamePicker;
